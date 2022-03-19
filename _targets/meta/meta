@@ -1,0 +1,11 @@
+name|type|data|command|depend|seed|path|time|size|bytes|format|iteration|parent|children|seconds|warnings|error
+data|stem|6533e013efa2738e|4d28b3ae61066c9f|15669340fa0be499|1588979285||t19070.8002894007s|990f4e6f76416b38|452|rds|vector|||0.005||
+summary|stem|f154a8e4d588c16d|504e748dde9ca536|86c40f8150f15fa8|760118442||t19070.800881391s|24d52ebf1535bba2|123|rds|vector|||0.004||
+"%|||%"|function|031bda8ec980931b||||||||||||||
+tar_render_paths|function|9fc7025fc57efcac||||||||||||||
+tar_bookdown_deps|function|34a1d95e648973f0||||||||||||||
+summ|function|4e2891f125694d6d||||||||||||||
+tar_render_book_run|function|c5d06185b4f67360||||||||||||||
+tar_render_book_command|function|d66820fae148c5ac||||||||||||||
+tar_render_book|function|284cf2184d55f446||||||||||||||
+demo_book|stem|f0ece2be9b95d6b2|be9fbff971ee1506|ddd57125335d0327|-1855716053|demo-book/_book/index.html*demo-book/_book/demo-book.pdf*demo-book|t19070.8061926959s|c20ffdb1afe0300f|1178657|file|vector|||12.503||

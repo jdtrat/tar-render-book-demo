@@ -1,0 +1,55 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = ""
+)
+```
+
+# tar-render-book-demo
+
+The goal of tar-render-book-demo is to provide a preview of creating a bookdown book using a [targets](https://github.com/ropensci/targets) pipeline.
+
+This project was created with the template book by calling `bookdown::create_bs4_book(path = "demo-book")`. I added a section to the file `demo-book/01-intro.Rmd` to use the `data` target created as part of the default `_targets.R` file generated with `targets::tar_script()`. I also modified the `demo-book/index.Rmd` file to write the 'packages.bib' to `demo-book/packages.bib`.
+
+After running the pipeline, any time we update or modify a file in the "demo-book" folder, the target `demo_book` will become outdated.
+
+## `_targets.R` File
+
+```{r read-script, echo = FALSE}
+cat(
+  readLines("_targets.R"),
+  sep = "\n"
+)
+```
+
+## Run and Visualize Pipeline
+
+```{r show-visnetwork, echo = TRUE}
+targets::tar_make()
+targets::tar_visnetwork(targets_only = TRUE)
+```
+
+## Invalidate Pipeline
+
+We can invalidate the pipeline by modifying any of the files in the "demo-book" directory. One easy way is just to add a new line to a file.
+
+```{r overwrite-file}
+writeLines(
+  text = c(
+    readLines("demo-book/01-intro.Rmd"), 
+    "new line here!"
+    ),
+  con = "demo-book/01-intro.Rmd"
+  )
+```
+
+```{r show-visnetwork-outdates}
+targets::tar_visnetwork(targets_only = TRUE)
+```
+
